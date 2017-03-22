@@ -77,5 +77,54 @@ For an app that will be shipped to production, you should sign your application.
 
 See the [Auto Update](https://github.com/electron-userland/electron-builder/wiki/Auto-Update) section of the [Wiki](https://github.com/electron-userland/electron-builder/wiki).
 
+## CLI Usage
+Execute `node_modules/.bin/build --help` to get the actual CLI usage guide.
+
+```
+Building:
+  --mac, -m, -o, --macos   Build for macOS, accepts target list (see
+                           https://goo.gl/HAnnq8).                       [array]
+  --linux, -l              Build for Linux, accepts target list (see
+                           https://goo.gl/O80IL2)                        [array]
+  --win, -w, --windows     Build for Windows, accepts target list (see
+                           https://goo.gl/dL4i8i)                        [array]
+  --x64                    Build for x64                               [boolean]
+  --ia32                   Build for ia32                              [boolean]
+  --armv7l                 Build for armv7l                            [boolean]
+  --dir                    Build unpacked dir. Useful to test.         [boolean]
+  --extraMetadata, --em    Inject properties to package.json (asar only)
+  --prepackaged, --pd      The path to prepackaged app (to pack in a
+                           distributable format)
+  --projectDir, --project  The path to project directory. Defaults to current
+                           working directory.
+  --config, -c             The path to an electron-builder config. Defaults to
+                           `electron-builder.yml` (or `json`, or `json5`), see
+                           https://goo.gl/YFRJOM
+
+Publishing:
+  --publish, -p  Publish artifacts (to GitHub Releases), see
+                 https://goo.gl/WMlr4n
+                           [choices: "onTag", "onTagOrDraft", "always", "never"]
+  --draft        Create a draft (unpublished) release                  [boolean]
+  --prerelease   Identify the release as a prerelease                  [boolean]
+
+Deprecated:
+  --platform  The target platform (preferred to use --mac, --win or --linux)
+                      [choices: "mac", "win", "linux", "darwin", "win32", "all"]
+  --arch      The target arch (preferred to use --x64 or --ia32)
+                                                 [choices: "ia32", "x64", "all"]
+
+Other:
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
+
+Examples:
+  build -mwl                    build for macOS, Windows and Linux
+  build --linux deb tar.xz      build deb and tar.xz for Linux
+  build --win --ia32            build for Windows ia32
+  build --em.foo=bar            set package.json property `foo` to `bar`
+  build --config.nsis.unicode=false  configure unicode options for NSIS
+```
+
 ![alt tag](https://raw.githubusercontent.com/razzul/win-calculator/master/screenshots/1.png)
 ![alt tag](https://raw.githubusercontent.com/razzul/win-calculator/master/screenshots/2.png)
