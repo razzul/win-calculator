@@ -2,7 +2,7 @@
 
 [download [x32]](https://drive.google.com/open?id=0B5vssmhQnZ0Ed0JlcGloa0JFTzg)
 
-A basic Electron application needs just these files:
+A basic application needs just these files:
 
 - `package.json` - Points to the app's main file and lists its details and dependencies.
 - `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
